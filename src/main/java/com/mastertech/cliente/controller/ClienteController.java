@@ -17,17 +17,17 @@ public class ClienteController {
     private ClienteService service;
 
     @PostMapping("/cliente")
-    public ResponseEntity postCliente(@RequestBody Cliente cliente){
-        service.save(cliente);
-        return ResponseEntity.ok(service.save(cliente));
+    public ResponseEntity salvarCliente(@RequestBody Cliente cliente){
+        return ResponseEntity.ok(service.salvar(cliente));
     }
 
     @GetMapping("/cliente/{id}")
-    public Optional<Cliente> getCliente(@PathVariable String id){
-        return service.findById(Integer.valueOf(id));
+    public Optional<Cliente> buscaCliente(@PathVariable String id){
+        return service.buscarClientePorId(Integer.valueOf(id));
     }
+
     @GetMapping("/clientes")
-    public List<Cliente> getAllClientes() {
-        return service.findAll();
+    public List<Cliente> buscaTodosClientes() {
+        return service.buscarTodos();
     }
 }
