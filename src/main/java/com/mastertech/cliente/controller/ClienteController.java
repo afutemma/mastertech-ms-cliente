@@ -23,6 +23,7 @@ public class ClienteController {
 
     @GetMapping("/cliente/{id}")
     public Optional<Cliente> buscaCliente(@PathVariable String id){
+        System.out.println("Eeeeeeeepa " + System.currentTimeMillis());
         return service.buscarClientePorId(Integer.valueOf(id));
     }
 

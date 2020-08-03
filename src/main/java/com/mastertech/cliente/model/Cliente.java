@@ -16,7 +16,7 @@ public class Cliente implements Serializable {
         return idCliente;
     }
 
-    public void setIdCliente(int idCLiente) {
+    public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
     }
 
